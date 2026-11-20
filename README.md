@@ -1,24 +1,63 @@
 # ZENTRO – The Future of Shopping
 
-A modern, full-stack e-commerce web application developed using React, TypeScript, Node.js, Express.js, and NeDB. ZENTRO provides a complete online shopping experience with customer authentication, product management, shopping cart, wishlist, checkout, order tracking, and an administration portal.
+A modern, full-stack e-commerce web application developed using React, TypeScript, Node.js, Express.js, and NeDB.
+
+ZENTRO provides a complete online shopping experience with customer authentication, product browsing, shopping cart, wishlist, checkout, order tracking, email notifications, and an administration portal.
 
 ## Project Overview
 
-ZENTRO is a college project designed to demonstrate the development of a full-stack e-commerce application. It provides a user-friendly shopping interface with a modern dark-themed design and a separate administration portal for managing products, customers, and orders.
+ZENTRO is a college project designed to demonstrate the development of a full-stack e-commerce application. It provides a modern shopping interface with a dark-themed design and an administration portal for managing products, customers, and orders.
 
 The application includes customer registration and login, product browsing, cart and wishlist management, checkout, order placement, delivery tracking, and automated email notifications.
+
+## Project Screenshots
+
+### 1. Home Page
+
+![ZENTRO Home Page](screenshots/home-page.png)
+
+### 2. Features
+
+![ZENTRO Features](screenshots/features.png)
+
+### 3. Admin Dashboard
+
+![Admin Dashboard](screenshots/admin-dashboard.png)
+
+### 4. Order Information
+
+![Order Information](screenshots/order-info.png)
+
+### 5. Order Placed
+
+![Order Placed](screenshots/order-placed.png)
+
+### 6. Order Placed – Confirmation
+
+![Order Placed 2](screenshots/order-placed-2.png)
+
+### 7. Track Order
+
+![Track Order](screenshots/track-order.png)
+
+### 8. Login Successful Email
+
+![Login Successful Email](screenshots/login-successful-email.png)
+
+### 9. Order Confirmation Email
+
+![Order Confirmation Email](screenshots/order-confirmation-email.png)
+
+### 10. Order Confirmation Email – Additional View
+
+![Order Confirmation Email 2](screenshots/order-confirmation-email-2.png)
 
 ## Key Features
 
 ### 1. Customer Storefront
 
 - Product catalog with 46+ products.
-- Five product categories:
-  - Fashion
-  - Electronics
-  - Beauty
-  - Home
-  - Footwear
+- Five product categories: Fashion, Electronics, Beauty, Home, and Footwear.
 - Product search and category filtering.
 - Product ratings and review counts.
 - Product labels such as HOT, SALE, NEW, and TRENDING.
@@ -47,9 +86,9 @@ The application includes customer registration and login, product browsing, cart
 
 - Indian shipping address form.
 - Mobile number and PIN code validation.
-- Multiple payment options.
-- Cash on Delivery (COD).
-- Online payment simulation supporting UPI, Google Pay, PhonePe, and cards.
+- Cash on Delivery.
+- Online payment simulation.
+- UPI, Google Pay, PhonePe, and card payment options.
 - Order confirmation screen.
 
 **Note:** Online payment is simulated for educational and testing purposes. No real financial transactions are processed.
@@ -77,14 +116,12 @@ The application includes customer registration and login, product browsing, cart
 - Product catalog management.
 - Customer order management.
 - Update order delivery status.
-- Synchronize product information with the backend.
 
 ### 7. Email Notifications
 
 - Automated order confirmation emails.
 - Gmail SMTP integration using Nodemailer.
 - Product images embedded in email notifications using CID attachments.
-- Email notifications after successful order placement.
 
 ## Technology Stack
 
@@ -99,7 +136,7 @@ The application includes customer registration and login, product browsing, cart
 | Email Service | Nodemailer, Gmail SMTP |
 | API Communication | REST API |
 | Data Persistence | LocalStorage |
-| Development Tools | VS Code, npm, Git, GitHub |
+| Tools | VS Code, npm, Git, GitHub |
 
 ## Project Architecture
 
@@ -126,17 +163,20 @@ Zentro/
 │
 ├── public/
 │
+├── screenshots/
+│   ├── admin-dashboard.png
+│   ├── features.png
+│   ├── home-page.png
+│   ├── login-successful-email.png
+│   ├── order-info.png
+│   ├── order-placed-2.png
+│   ├── order-placed.png
+│   ├── order-confirmation-email.png
+│   ├── order-confirmation-email-2.png
+│   └── track-order.png
+│
 ├── src/
 │   ├── components/
-│   │   ├── auth/
-│   │   ├── cart/
-│   │   ├── checkout/
-│   │   ├── home/
-│   │   ├── layout/
-│   │   ├── orders/
-│   │   ├── ui/
-│   │   └── wishlist/
-│   │
 │   ├── context/
 │   ├── data/
 │   ├── Pages/
@@ -145,20 +185,13 @@ Zentro/
 │
 ├── .gitignore
 ├── README.md
-├── index.html
 ├── package.json
-├── package-lock.json
-├── tsconfig.json
 └── vite.config.ts
 ```
 
 ## Getting Started
 
-Follow these steps to run the project on your local computer.
-
 ### 1. Prerequisites
-
-Install the following software:
 
 - Node.js (version 18 or higher recommended)
 - npm
@@ -170,8 +203,6 @@ Install the following software:
 ```bash
 git clone https://github.com/AnanyaNPuthran/ZENTRO.git
 ```
-
-Navigate to the project folder:
 
 ```bash
 cd ZENTRO
@@ -193,9 +224,9 @@ npm install --prefix backend
 
 ### 4. Configure Environment Variables
 
-Create a `.env` file inside the backend folder using the `.env.example` file as a reference.
+Create a `.env` file inside the backend folder using `.env.example` as a reference.
 
-Configure the following variables:
+Configure:
 
 ```env
 PORT=3001
@@ -203,16 +234,12 @@ JWT_SECRET=your_super_secret_jwt_key_here
 JWT_EXPIRES=30d
 
 EMAIL_USER=your_email@gmail.com
-EMAIL_PASSWORD=your_16_character_google_app_password
+EMAIL_PASSWORD=your_google_app_password
 ```
 
-Use your own credentials. Never upload your actual `.env` file or Gmail App Password to GitHub.
-
-Email configuration is optional. Without Gmail credentials, order placement can continue without sending email notifications.
+Use your own credentials. Never upload actual passwords or secret keys to GitHub.
 
 ### 5. Create an Admin Account
-
-Run the following command:
 
 ```bash
 node backend/createAdmin.js
@@ -222,13 +249,11 @@ Follow the instructions to enter the admin name, email, and password.
 
 ### 6. Run the Application
 
-Start the frontend and backend together:
-
 ```bash
 npm run dev
 ```
 
-The application will be available at:
+Application URLs:
 
 | Service | URL |
 |---|---|
@@ -236,26 +261,25 @@ The application will be available at:
 | Backend API | http://localhost:3001 |
 | Admin Portal | http://localhost:5173/admin |
 
-Note: The Vite frontend may use another available port if port 5173 is already occupied.
+The frontend port may change if port 5173 is already occupied.
 
 ## Security
 
 - Passwords are hashed using bcryptjs.
 - JWT tokens are used for authentication.
 - Environment variables are stored separately.
-- Sensitive configuration files are excluded using `.gitignore`.
+- Sensitive files are excluded using `.gitignore`.
 - Local database files are excluded from GitHub.
 - Admin routes require authentication.
 
 ## Future Enhancements
 
-- Integration with a real payment gateway.
-- Improved product recommendation system.
-- Advanced sales analytics and reporting.
+- Real payment gateway integration.
+- Advanced sales analytics.
 - Product reviews and customer feedback.
-- Enhanced order notification system.
+- Improved product recommendations.
 - Cloud database integration.
-- Deployment to a live hosting platform.
+- Live application deployment.
 
 ## Project Information
 
@@ -265,21 +289,15 @@ Note: The Vite frontend may use another available port if port 5173 is already o
 
 **Project Purpose:** College Academic Project
 
-**Frontend:** React and TypeScript
-
-**Backend:** Node.js and Express.js
-
-**Database:** NeDB
-
 ## Author
 
 **Ananya N Puthran**
 
-GitHub: https://github.com/AnanyaNPuthran
+GitHub: [AnanyaNPuthran](https://github.com/AnanyaNPuthran)
 
 ## Repository
 
-https://github.com/AnanyaNPuthran/ZENTRO
+[ZENTRO – GitHub Repository](https://github.com/AnanyaNPuthran/ZENTRO)
 
 ## License
 
