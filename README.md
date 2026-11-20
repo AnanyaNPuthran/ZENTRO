@@ -2,66 +2,73 @@
 
 A modern, full-stack e-commerce web application developed using React, TypeScript, Node.js, Express.js, and NeDB.
 
-ZENTRO provides a complete online shopping experience with customer authentication, product browsing, shopping cart, wishlist, checkout, order tracking, email notifications, and an administration portal.
+ZENTRO provides a complete online shopping experience with customer authentication, product browsing, shopping cart, wishlist, checkout, order tracking, automated email notifications, and an administration portal.
 
 ## Project Overview
 
-ZENTRO is a college project designed to demonstrate the development of a full-stack e-commerce application. It provides a modern shopping interface with a dark-themed design and an administration portal for managing products, customers, and orders.
+ZENTRO is a college academic project designed to demonstrate the development of a full-stack e-commerce application.
 
-The application includes customer registration and login, product browsing, cart and wishlist management, checkout, order placement, delivery tracking, and automated email notifications.
+The application provides a modern dark-themed shopping interface for customers and an administration portal for managing products, customers, and orders.
+
+It includes customer registration and login, product browsing, cart and wishlist management, checkout, order placement, delivery tracking, and automated email notifications.
 
 ## Project Screenshots
 
 ### 1. Home Page
 
-![ZENTRO Home Page](screenshots/home-page.png)
+![ZENTRO Home Page](Screenshot/Home%20page.png)
 
 ### 2. Features
 
-![ZENTRO Features](screenshots/features.png)
+![ZENTRO Features](Screenshot/Features.png)
 
 ### 3. Admin Dashboard
 
-![Admin Dashboard](screenshots/admin-dashboard.png)
+![Admin Dashboard](Screenshot/Admin%20dashboard.png)
 
-### 4. Order Information
+### 4. Login Successful Email
 
-![Order Information](screenshots/order-info.png)
+![Login Successful Email](Screenshot/Login%20successfull%20email.png)
 
-### 5. Order Placed
+### 5. Order Information
 
-![Order Placed](screenshots/order-placed.png)
+![Order Information](Screenshot/Order%20info.png)
 
-### 6. Order Placed – Confirmation
+### 6. Order Placed
 
-![Order Placed 2](screenshots/order-placed-2.png)
+![Order Placed](Screenshot/Order%20Placed.png)
 
-### 7. Track Order
+### 7. Order Placed – Additional View
 
-![Track Order](screenshots/track-order.png)
+![Order Placed 2](Screenshot/Order%20placed%202.png)
 
-### 8. Login Successful Email
+### 8. Order Confirmation Email
 
-![Login Successful Email](screenshots/login-successful-email.png)
+![Order Confirmation Email](Screenshot/Order%20confired%20email.png)
 
-### 9. Order Confirmation Email
+### 9. Order Confirmation Email – Additional View
 
-![Order Confirmation Email](screenshots/order-confirmation-email.png)
+![Order Confirmation Email 2](Screenshot/Order%20confirmed%20email%202.png)
 
-### 10. Order Confirmation Email – Additional View
+### 10. Track Order
 
-![Order Confirmation Email 2](screenshots/order-confirmation-email-2.png)
+![Track Order](Screenshot/Track%20order.png)
 
 ## Key Features
 
 ### 1. Customer Storefront
 
 - Product catalog with 46+ products.
-- Five product categories: Fashion, Electronics, Beauty, Home, and Footwear.
+- Five product categories:
+  - Fashion
+  - Electronics
+  - Beauty
+  - Home
+  - Footwear
 - Product search and category filtering.
 - Product ratings and review counts.
 - Product labels such as HOT, SALE, NEW, and TRENDING.
-- Responsive user interface.
+- Modern responsive user interface.
 
 ### 2. Customer Authentication
 
@@ -85,8 +92,9 @@ The application includes customer registration and login, product browsing, cart
 ### 4. Checkout and Payment
 
 - Indian shipping address form.
-- Mobile number and PIN code validation.
-- Cash on Delivery.
+- Mobile number validation.
+- PIN code validation.
+- Cash on Delivery (COD).
 - Online payment simulation.
 - UPI, Google Pay, PhonePe, and card payment options.
 - Order confirmation screen.
@@ -116,12 +124,14 @@ The application includes customer registration and login, product browsing, cart
 - Product catalog management.
 - Customer order management.
 - Update order delivery status.
+- Product and order synchronization with the backend.
 
 ### 7. Email Notifications
 
 - Automated order confirmation emails.
 - Gmail SMTP integration using Nodemailer.
 - Product images embedded in email notifications using CID attachments.
+- Email notifications after successful order placement.
 
 ## Technology Stack
 
@@ -136,12 +146,12 @@ The application includes customer registration and login, product browsing, cart
 | Email Service | Nodemailer, Gmail SMTP |
 | API Communication | REST API |
 | Data Persistence | LocalStorage |
-| Tools | VS Code, npm, Git, GitHub |
+| Development Tools | VS Code, npm, Git, GitHub |
 
 ## Project Architecture
 
 ```text
-Zentro/
+ZENTRO/
 │
 ├── backend/
 │   ├── routes/
@@ -163,17 +173,17 @@ Zentro/
 │
 ├── public/
 │
-├── screenshots/
-│   ├── admin-dashboard.png
-│   ├── features.png
-│   ├── home-page.png
-│   ├── login-successful-email.png
-│   ├── order-info.png
-│   ├── order-placed-2.png
-│   ├── order-placed.png
-│   ├── order-confirmation-email.png
-│   ├── order-confirmation-email-2.png
-│   └── track-order.png
+├── Screenshot/
+│   ├── Admin dashboard.png
+│   ├── Features.png
+│   ├── Home page.png
+│   ├── Login successfull email.png
+│   ├── Order Placed.png
+│   ├── Order confired email.png
+│   ├── Order confirmed email 2.png
+│   ├── Order info.png
+│   ├── Order placed 2.png
+│   └── Track order.png
 │
 ├── src/
 │   ├── components/
@@ -185,13 +195,20 @@ Zentro/
 │
 ├── .gitignore
 ├── README.md
+├── index.html
 ├── package.json
+├── package-lock.json
+├── tsconfig.json
 └── vite.config.ts
 ```
 
 ## Getting Started
 
+Follow these steps to run the project on your local computer.
+
 ### 1. Prerequisites
+
+Install the following software:
 
 - Node.js (version 18 or higher recommended)
 - npm
@@ -203,6 +220,8 @@ Zentro/
 ```bash
 git clone https://github.com/AnanyaNPuthran/ZENTRO.git
 ```
+
+Navigate to the project folder:
 
 ```bash
 cd ZENTRO
@@ -226,20 +245,24 @@ npm install --prefix backend
 
 Create a `.env` file inside the backend folder using `.env.example` as a reference.
 
-Configure:
+Configure the following variables:
 
 ```env
 PORT=3001
-JWT_SECRET=your_super_secret_jwt_key_here
+JWT_SECRET=your_secret_jwt_key
 JWT_EXPIRES=30d
 
 EMAIL_USER=your_email@gmail.com
 EMAIL_PASSWORD=your_google_app_password
 ```
 
-Use your own credentials. Never upload actual passwords or secret keys to GitHub.
+Use your own credentials. Never upload your actual `.env` file, Gmail App Password, or secret keys to GitHub.
+
+Email configuration is optional. Without Gmail credentials, order placement can continue without sending email notifications.
 
 ### 5. Create an Admin Account
+
+Run the following command:
 
 ```bash
 node backend/createAdmin.js
@@ -249,11 +272,13 @@ Follow the instructions to enter the admin name, email, and password.
 
 ### 6. Run the Application
 
+Start the frontend and backend together:
+
 ```bash
 npm run dev
 ```
 
-Application URLs:
+The application will be available at:
 
 | Service | URL |
 |---|---|
@@ -261,23 +286,23 @@ Application URLs:
 | Backend API | http://localhost:3001 |
 | Admin Portal | http://localhost:5173/admin |
 
-The frontend port may change if port 5173 is already occupied.
+Note: Vite may select another available port if port 5173 is already occupied.
 
 ## Security
 
 - Passwords are hashed using bcryptjs.
 - JWT tokens are used for authentication.
 - Environment variables are stored separately.
-- Sensitive files are excluded using `.gitignore`.
+- Sensitive configuration files are excluded using `.gitignore`.
 - Local database files are excluded from GitHub.
 - Admin routes require authentication.
 
 ## Future Enhancements
 
-- Real payment gateway integration.
-- Advanced sales analytics.
+- Integration with a real payment gateway.
+- Advanced sales analytics and reporting.
 - Product reviews and customer feedback.
-- Improved product recommendations.
+- Improved product recommendation system.
 - Cloud database integration.
 - Live application deployment.
 
@@ -289,15 +314,21 @@ The frontend port may change if port 5173 is already occupied.
 
 **Project Purpose:** College Academic Project
 
+**Frontend:** React and TypeScript
+
+**Backend:** Node.js and Express.js
+
+**Database:** NeDB
+
 ## Author
 
 **Ananya N Puthran**
 
-GitHub: [AnanyaNPuthran](https://github.com/AnanyaNPuthran)
+GitHub: https://github.com/AnanyaNPuthran
 
 ## Repository
 
-[ZENTRO – GitHub Repository](https://github.com/AnanyaNPuthran/ZENTRO)
+https://github.com/AnanyaNPuthran/ZENTRO
 
 ## License
 
